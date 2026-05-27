@@ -3,11 +3,13 @@ export default function Home() {
     <main className="min-h-screen bg-[#f3eadb] text-[#3b2416] overflow-x-hidden">
       <section className="px-6 py-8 max-w-7xl mx-auto">
       <nav className="flex items-center justify-between mb-20">
+ <div className="bg-[#f3eadb] rounded-2xl px-2 py-1 inline-flex items-center">
   <img
-  src="/terrava-logo.png"
-  alt="Terrava"
-  className="h-12 w-auto"
-/>
+    src="/terrava-logo.png"
+    alt="Terrava"
+    className="h-9 w-auto"
+  />
+</div>
 
   <details className="relative">
   <summary className="bg-[#3b2416] text-[#f3eadb] w-[170px] h-[64px] md:w-[260px] md:h-[90px] rounded-full text-lg md:text-2xl font-bold cursor-pointer shadow-xl flex items-center justify-center">
