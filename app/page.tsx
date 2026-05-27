@@ -3,7 +3,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#f3eadb] text-[#3b2416] overflow-x-hidden">
       <section className="px-6 py-8 max-w-7xl mx-auto">
-      <nav className="flex items-center justify-between mb-20">
+     <nav className="flex items-center justify-between mb-20 relative z-[9999]">
  <div className="bg-[#f3eadb] rounded-2xl px-2 py-1 inline-flex items-center">
   <img
     src="/terrava-logo.png"
@@ -17,7 +17,7 @@ export default function Home() {
   Меню
 </summary>
 
-  <div className="absolute right-0 mt-5 w-80 bg-[#eadcc7] rounded-3xl p-5 shadow-xl flex flex-col gap-3 z-50">
+  <div className="absolute right-0 mt-5 w-80 bg-[#eadcc7] rounded-3xl p-5 shadow-xl flex flex-col gap-3 z-[9999]">
     <a href="#mountains" className="bg-[#f3eadb] rounded-2xl px-6 py-4 font-semibold">
       Планини
     </a>
