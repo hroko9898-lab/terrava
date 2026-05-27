@@ -1,4 +1,4 @@
-import TerravaMap from "./components/TerravaMap";
+import TerravaMap from "./components/TerravaMapInner";
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#f3eadb] text-[#3b2416] overflow-x-hidden">
