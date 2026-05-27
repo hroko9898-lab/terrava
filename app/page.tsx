@@ -1,3 +1,4 @@
+import TerravaMap from "./components/TerravaMap";
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#f3eadb] text-[#3b2416] overflow-x-hidden">
@@ -67,21 +68,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-[#d8c5a8] rounded-[2.5rem] p-6 shadow-2xl">
-            <div className="h-[500px] rounded-[2rem] bg-[#b7a17d] flex items-center justify-center text-center p-8">
-              <div>
-                <p className="text-sm uppercase tracking-[0.3em] mb-4">
-                  Interactive Map
-                </p>
-                <h3 className="text-4xl font-bold mb-4">
-                  Тук ще бъде картата
-                </h3>
-                <p className="text-[#5c3f28]">
-                  Скоро ще добавим планини, маршрути, GPS и топографски слоеве.
-                </p>
-              </div>
-            </div>
-          </div>
+<TerravaMap />
         </div>
       </section>
 <section className="px-6 py-20 max-w-7xl mx-auto">

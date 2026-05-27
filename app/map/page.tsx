@@ -1,3 +1,4 @@
+import TerravaMap from "../components/TerravaMap";
 export default function MapPage() {
   return (
     <main className="min-h-screen bg-[#f3eadb] text-[#3b2416] px-6 py-12 md:px-20 md:py-20">
@@ -24,10 +25,7 @@ export default function MapPage() {
       </p>
 
      <div className="bg-[#d8c5a8] rounded-[2.5rem] p-6 shadow-xl mb-20">
-  <iframe
-    src="https://www.openstreetmap.org/export/embed.html?bbox=22.34%2C41.23%2C28.61%2C44.22&layer=mapnik&marker=42.7339%2C25.4858"
-    className="h-[520px] w-full rounded-[2rem] border-0"
-  ></iframe>
+  <TerravaMap />
 </div>
 <section className="mt-20 grid md:grid-cols-3 gap-8">
   <div className="bg-[#eadcc7] rounded-3xl p-8 border border-[#d6c3aa]">
