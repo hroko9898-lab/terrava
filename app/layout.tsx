@@ -16,6 +16,9 @@ export const metadata = {
   title: "Terrava | Планини и маршрути в България",
   description:
     "Terrava е пътеводител за планини, маршрути, карти и безопасност сред природата в България.",
+  icons: {
+    icon: "/terrava-logo.png",
+  },
 };
 
 export default function RootLayout({
