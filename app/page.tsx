@@ -255,7 +255,11 @@ className="group overflow-hidden rounded-[2rem] bg-[#eadcc7] border border-[#d6c
       <footer className="px-6 py-12 max-w-7xl mx-auto border-t border-[#d6c3aa]">
   <div className="flex flex-col md:flex-row justify-between gap-6">
     <div>
-      <h2 className="text-2xl font-bold mb-3">Terrava</h2>
+      <img
+  src="/terrava-logo.png"
+  alt="Terrava"
+  className="h-10 w-auto mb-3"
+/>
       <p className="text-[#6b4b32] max-w-md">
         Български пътеводител за планини, пътеки, диви места и безопасност сред природата.
       </p>

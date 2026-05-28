@@ -202,7 +202,11 @@ export default function AboutPage() {
       <footer className="mt-40 pt-12 border-t border-[#d6c3aa]">
         <div className="flex flex-col md:flex-row justify-between gap-6">
           <div>
-            <h2 className="text-2xl font-bold mb-3">Terrava</h2>
+            <img
+  src="/terrava-logo.png"
+  alt="Terrava"
+  className="h-10 w-auto mb-3"
+/>
             <p className="text-[#6b4b32] max-w-md">
               Проект за планини, пътеки, карти и безопасност сред природата в България.
             </p>
