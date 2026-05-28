@@ -1,9 +1,11 @@
 import MountainPage from "../../components/MountainPage";
+
 export const metadata = {
   title: "Витоша | Черни връх, Камен дел и маршрути | Terrava",
   description:
     "Разгледай маршрути във Витоша като Черни връх, Златните мостове и Камен дел, с информация за трудност, време, достъп и безопасност.",
 };
+
 export default function VitoshaPage() {
   return (
     <MountainPage
@@ -33,6 +35,7 @@ export default function VitoshaPage() {
           highlight: "Черни връх, открито плато и гледки към София",
           description:
             "Един от най-популярните маршрути на Витоша. Подходящ е за начинаещи с нормална подготовка, но при мъгла, силен вятър или сняг трябва да се внимава.",
+          link: "/mountains/vitosha/cherni-vrah",
         },
         {
           title: "Златните мостове",
@@ -42,6 +45,7 @@ export default function VitoshaPage() {
           highlight: "Каменна река, горски пътеки и места за почивка",
           description:
             "Лесно достъпно място, подходящо за кратка разходка, семейства и хора без сериозна подготовка. Добър избор за спокоен ден сред природата.",
+          link: "/mountains/vitosha/zlatnite-mostove",
         },
         {
           title: "Хижа Алеко – Камен дел",
@@ -51,6 +55,7 @@ export default function VitoshaPage() {
           highlight: "Една от най-хубавите гледки към София",
           description:
             "Кратък и приятен преход по платото на Витоша. Подходящ е за хора, които искат красива панорама без прекалено тежко натоварване.",
+          link: "/mountains/vitosha/kamen-del",
         },
       ]}
       dangers={["Глигани", "Змии", "Кърлежи", "Лошо време"]}
