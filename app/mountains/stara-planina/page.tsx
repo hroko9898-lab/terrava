@@ -1,9 +1,11 @@
 import MountainPage from "../../components/MountainPage";
+
 export const metadata = {
   title: "Стара планина | Връх Ботев и маршрути | Terrava",
   description:
     "Разгледай маршрути в Стара планина като връх Ботев, Райското пръскало и участъци от Ком–Емине, с информация за трудност и достъп.",
 };
+
 export default function StaraPlaninaPage() {
   return (
     <MountainPage
@@ -33,6 +35,7 @@ export default function StaraPlaninaPage() {
           highlight: "Най-високият връх в Стара планина и силни билни гледки",
           description:
             "Маршрутите към връх Ботев са сериозни и често дълги. Подходящи са за хора с добра физическа подготовка и опит в планината. Времето може да се промени бързо.",
+          link: "/mountains/stara-planina/vrah-botev",
         },
         {
           title: "Райското пръскало",
@@ -42,6 +45,7 @@ export default function StaraPlaninaPage() {
           highlight: "Един от най-впечатляващите водопади в България",
           description:
             "Много красив маршрут с гледки към хижа Рай и водопада. Не е просто лека разходка — има изкачване и изисква удобни обувки и добра подготовка.",
+          link: "/mountains/stara-planina/rayskoto-praskalo",
         },
         {
           title: "Ком–Емине участък",
@@ -51,6 +55,7 @@ export default function StaraPlaninaPage() {
           highlight: "Билни маршрути, хижи, проходи и дълги гледки",
           description:
             "По-добре е да се минава на отделни участъци, а не наведнъж. Подходящо е за хора, които искат по-дълги преходи и истинско планинско усещане.",
+          link: "/mountains/stara-planina/kom-emine",
         },
       ]}
       dangers={["Мечки", "Вълци", "Глигани", "Змии"]}
