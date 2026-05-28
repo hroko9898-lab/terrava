@@ -1,5 +1,9 @@
 import MountainPage from "../../components/MountainPage";
-
+export const metadata = {
+  title: "Родопи | Пещери, ждрела и маршрути | Terrava",
+  description:
+    "Разгледай маршрути и места в Родопите като Ягодинска пещера, Орлово око, Дяволското гърло и Триградско ждрело.",
+};
 export default function RodopiPage() {
   return (
     <MountainPage

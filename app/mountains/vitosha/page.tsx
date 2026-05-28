@@ -1,5 +1,9 @@
 import MountainPage from "../../components/MountainPage";
-
+export const metadata = {
+  title: "Витоша | Черни връх, Камен дел и маршрути | Terrava",
+  description:
+    "Разгледай маршрути във Витоша като Черни връх, Златните мостове и Камен дел, с информация за трудност, време, достъп и безопасност.",
+};
 export default function VitoshaPage() {
   return (
     <MountainPage

@@ -1,5 +1,9 @@
 import MountainPage from "../../components/MountainPage";
-
+export const metadata = {
+  title: "Стара планина | Връх Ботев и маршрути | Terrava",
+  description:
+    "Разгледай маршрути в Стара планина като връх Ботев, Райското пръскало и участъци от Ком–Емине, с информация за трудност и достъп.",
+};
 export default function StaraPlaninaPage() {
   return (
     <MountainPage

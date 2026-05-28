@@ -1,5 +1,9 @@
 import MountainPage from "../../components/MountainPage";
-
+export const metadata = {
+  title: "Пирин | Вихрен, Безбог и планински маршрути | Terrava",
+  description:
+    "Разгледай маршрути в Пирин като Вихрен, Безбог, Попово езеро и Кончето, с информация за трудност, време, достъп и безопасност.",
+};
 export default function PirinPage() {
   return (
     <MountainPage

@@ -1,5 +1,9 @@
 import MountainPage from "../../components/MountainPage";
-
+export const metadata = {
+  title: "Странджа | Гори, светилища и маршрути | Terrava",
+  description:
+    "Разгледай маршрути и места в Странджа като Мишкова нива, Голямо Градище, Бръшлян и Индипасха, с информация за трудност и достъп.",
+};
 export default function StrandzhaPage() {
   return (
     <MountainPage

@@ -1,5 +1,9 @@
 import MountainPage from "../../components/MountainPage";
-
+export const metadata = {
+  title: "Рила | Маршрути, езера и безопасност | Terrava",
+  description:
+    "Разгледай маршрути в Рила като Седемте рилски езера, Мусала и Мальовица, с информация за трудност, време, достъп и безопасност.",
+};
 export default function RilaPage() {
   return (
     <MountainPage
