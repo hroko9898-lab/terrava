@@ -18,19 +18,19 @@ export default function Home() {
 </summary>
 
   <div className="absolute right-0 mt-5 w-80 bg-[#eadcc7] rounded-3xl p-5 shadow-xl flex flex-col gap-3 z-[9999]">
-    <a href="#mountains" className="bg-[#f3eadb] rounded-2xl px-6 py-4 font-semibold">
+    <a href="#mountains" className="bg-[#f3eadb] rounded-2xl px-6 py-4 font-semibold hover:bg-[#3b2416] hover:text-[#f3eadb] transition">
       Планини
     </a>
 
-    <a href="/map" className="bg-[#f3eadb] rounded-2xl px-6 py-4 font-semibold">
+    <a href="#mountains" className="bg-[#f3eadb] rounded-2xl px-6 py-4 font-semibold hover:bg-[#3b2416] hover:text-[#f3eadb] transition">
       Карта
     </a>
 
-    <a href="/safety" className="bg-[#f3eadb] rounded-2xl px-6 py-4 font-semibold">
+    <a href="#mountains" className="bg-[#f3eadb] rounded-2xl px-6 py-4 font-semibold hover:bg-[#3b2416] hover:text-[#f3eadb] transition">
       Безопасност
     </a>
 
-    <a href="/about" className="bg-[#f3eadb] rounded-2xl px-6 py-4 font-semibold">
+    <a href="#mountains" className="bg-[#f3eadb] rounded-2xl px-6 py-4 font-semibold hover:bg-[#3b2416] hover:text-[#f3eadb] transition">
       За нас
     </a>
   </div>
