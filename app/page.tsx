@@ -25,7 +25,9 @@ export default function Home() {
     <a href="#mountains" className="bg-[#f3eadb] rounded-2xl px-6 py-4 font-semibold hover:bg-[#3b2416] hover:text-[#f3eadb] transition">
       Карта
     </a>
-
+<a href="/routes" className="bg-[#f3eadb] rounded-2xl px-6 py-4 font-semibold hover:bg-[#3b2416] hover:text-[#f3eadb] transition">
+  Маршрути
+</a>
     <a href="#mountains" className="bg-[#f3eadb] rounded-2xl px-6 py-4 font-semibold hover:bg-[#3b2416] hover:text-[#f3eadb] transition">
       Безопасност
     </a>
