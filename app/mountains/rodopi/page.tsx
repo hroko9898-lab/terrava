@@ -1,9 +1,11 @@
 import MountainPage from "../../components/MountainPage";
+
 export const metadata = {
   title: "Родопи | Пещери, ждрела и маршрути | Terrava",
   description:
     "Разгледай маршрути и места в Родопите като Ягодинска пещера, Орлово око, Дяволското гърло и Триградско ждрело.",
 };
+
 export default function RodopiPage() {
   return (
     <MountainPage
@@ -33,6 +35,7 @@ export default function RodopiPage() {
           highlight: "Пещера, панорамна площадка и гледки към Буйновското ждрело",
           description:
             "Много подходящ маршрут за хора, които искат красива гледка без тежък планински преход. До района се стига с кола, а до Орлово око често се използва високопроходим транспорт или се върви пеша.",
+          link: "/mountains/rodopi/yagodinska-peshtera-orlovo-oko",
         },
         {
           title: "Дяволското гърло",
@@ -42,6 +45,7 @@ export default function RodopiPage() {
           highlight: "Пещера, водопадна зала, легенди и Триградско ждрело",
           description:
             "Лесно достъпно и много впечатляващо място. Подходящо е и за хора без сериозна планинска подготовка, но трябва да се внимава по стълбите и влажните участъци.",
+          link: "/mountains/rodopi/dyavolskoto-garlo",
         },
         {
           title: "Триградско ждрело",
@@ -51,6 +55,7 @@ export default function RodopiPage() {
           highlight: "Високи скали, тесен път, пещери и драматичен пейзаж",
           description:
             "Един от най-разпознаваемите райони в Родопите. Подходящ е за разходка, снимки и комбиниране с пещерите наоколо. Не е тежък преход, но районът може да е натоварен през сезона.",
+          link: "/mountains/rodopi/trigradsko-zhdrelo",
         },
       ]}
       dangers={["Мечки", "Вълци", "Глигани", "Змии"]}
