@@ -3,31 +3,112 @@
   <url>
     <loc>https://terravaapp.com/</loc>
   </url>
+
   <url>
     <loc>https://terravaapp.com/map</loc>
   </url>
+
   <url>
     <loc>https://terravaapp.com/safety</loc>
   </url>
+
   <url>
     <loc>https://terravaapp.com/about</loc>
   </url>
+
   <url>
     <loc>https://terravaapp.com/mountains/rila</loc>
   </url>
+
+  <url>
+    <loc>https://terravaapp.com/mountains/rila/seven-rila-lakes</loc>
+  </url>
+
+  <url>
+    <loc>https://terravaapp.com/mountains/rila/musala</loc>
+  </url>
+
+  <url>
+    <loc>https://terravaapp.com/mountains/rila/malyovitsa</loc>
+  </url>
+
   <url>
     <loc>https://terravaapp.com/mountains/pirin</loc>
   </url>
+
+  <url>
+    <loc>https://terravaapp.com/mountains/pirin/vihren</loc>
+  </url>
+
+  <url>
+    <loc>https://terravaapp.com/mountains/pirin/bezbog-popovo-ezero</loc>
+  </url>
+
+  <url>
+    <loc>https://terravaapp.com/mountains/pirin/koncheto</loc>
+  </url>
+
   <url>
     <loc>https://terravaapp.com/mountains/rodopi</loc>
   </url>
+
+  <url>
+    <loc>https://terravaapp.com/mountains/rodopi/yagodinska-peshtera-orlovo-oko</loc>
+  </url>
+
+  <url>
+    <loc>https://terravaapp.com/mountains/rodopi/dyavolskoto-garlo</loc>
+  </url>
+
+  <url>
+    <loc>https://terravaapp.com/mountains/rodopi/trigradsko-zhdrelo</loc>
+  </url>
+
   <url>
     <loc>https://terravaapp.com/mountains/stara-planina</loc>
   </url>
+
+  <url>
+    <loc>https://terravaapp.com/mountains/stara-planina/vrah-botev</loc>
+  </url>
+
+  <url>
+    <loc>https://terravaapp.com/mountains/stara-planina/rayskoto-praskalo</loc>
+  </url>
+
+  <url>
+    <loc>https://terravaapp.com/mountains/stara-planina/kom-emine</loc>
+  </url>
+
   <url>
     <loc>https://terravaapp.com/mountains/vitosha</loc>
   </url>
+
+  <url>
+    <loc>https://terravaapp.com/mountains/vitosha/cherni-vrah</loc>
+  </url>
+
+  <url>
+    <loc>https://terravaapp.com/mountains/vitosha/zlatnite-mostove</loc>
+  </url>
+
+  <url>
+    <loc>https://terravaapp.com/mountains/vitosha/kamen-del</loc>
+  </url>
+
   <url>
     <loc>https://terravaapp.com/mountains/strandzha</loc>
+  </url>
+
+  <url>
+    <loc>https://terravaapp.com/mountains/strandzha/mishkova-niva-golyamo-gradishte</loc>
+  </url>
+
+  <url>
+    <loc>https://terravaapp.com/mountains/strandzha/brashlyan</loc>
+  </url>
+
+  <url>
+    <loc>https://terravaapp.com/mountains/strandzha/indipasha</loc>
   </url>
 </urlset>
