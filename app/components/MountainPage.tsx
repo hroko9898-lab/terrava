@@ -7,6 +7,14 @@ type MountainPageProps = {
     text: string;
   }[];
   dangers: string[];
+  routes?: {
+    title: string;
+    time: string;
+    difficulty: string;
+    carAccess: string;
+    highlight: string;
+    description: string;
+  }[];
 };
 
 export default function MountainPage({
@@ -15,7 +23,40 @@ export default function MountainPage({
   color,
   cards,
   dangers,
+  routes,
 }: MountainPageProps) {
+  const defaultRoutes = [
+    {
+      title: "Лесен маршрут",
+      time: "2–3 часа",
+      difficulty: "Лесно",
+      carAccess: "С кола до началната точка",
+      highlight: "Подходящ за кратък преход",
+      description:
+        "Лек маршрут за хора, които искат спокойна разходка и красиви гледки.",
+    },
+    {
+      title: "Панорамен преход",
+      time: "4–6 часа",
+      difficulty: "Средно",
+      carAccess: "С кола до близка начална точка",
+      highlight: "Добри гледки и по-дълъг преход",
+      description:
+        "Маршрут с повече ходене, подходящ за хора с базова подготовка.",
+    },
+    {
+      title: "Див маршрут",
+      time: "6+ часа",
+      difficulty: "Трудно",
+      carAccess: "С кола само до началото",
+      highlight: "По-див терен и повече натоварване",
+      description:
+        "По-сериозен маршрут, подходящ за хора с опит и добра подготовка.",
+    },
+  ];
+
+  const visibleRoutes = routes && routes.length > 0 ? routes : defaultRoutes;
+
   return (
     <main className="min-h-screen bg-[#f3eadb] text-[#3b2416]">
       <section className={`h-[70vh] ${color} flex items-end`}>
@@ -65,48 +106,50 @@ export default function MountainPage({
           ))}
         </div>
       </section>
-<section className="max-w-7xl mx-auto px-6 pb-20">
-  <h2 className="text-4xl font-bold mb-10">
-    Популярни маршрути
-  </h2>
 
-  <div className="grid md:grid-cols-3 gap-6">
-    {[
-      {
-        title: "Лесен маршрут",
-        time: "2–3 часа",
-        difficulty: "Лесно",
-      },
-      {
-        title: "Панорамен преход",
-        time: "4–6 часа",
-        difficulty: "Средно",
-      },
-      {
-        title: "Див маршрут",
-        time: "6+ часа",
-        difficulty: "Трудно",
-      },
-    ].map((route) => (
-      <div
-        key={route.title}
-        className="bg-[#eadcc7] rounded-3xl p-8 border border-[#d6c3aa]"
-      >
-        <h3 className="text-2xl font-bold mb-4">
-          {route.title}
-        </h3>
+      <section className="max-w-7xl mx-auto px-6 pb-20">
+        <h2 className="text-4xl font-bold mb-10">
+          Популярни маршрути
+        </h2>
 
-        <p className="text-[#6b4b32] mb-4">
-          Време: {route.time}
-        </p>
+        <div className="grid md:grid-cols-3 gap-6">
+          {visibleRoutes.map((route) => (
+            <div
+              key={route.title}
+              className="bg-[#eadcc7] rounded-3xl p-8 border border-[#d6c3aa]"
+            >
+              <div className="mb-5">
+                <span className="inline-block bg-[#3b2416] text-[#f3eadb] px-4 py-2 rounded-full text-sm font-semibold">
+                  {route.difficulty}
+                </span>
+              </div>
 
-        <span className="inline-block bg-[#3b2416] text-[#f3eadb] px-4 py-2 rounded-full text-sm font-semibold">
-          {route.difficulty}
-        </span>
-      </div>
-    ))}
-  </div>
-</section>
+              <h3 className="text-2xl font-bold mb-4">
+                {route.title}
+              </h3>
+
+              <p className="text-[#6b4b32] mb-4">
+                {route.description}
+              </p>
+
+              <div className="space-y-3 text-[#5c3f28] text-sm">
+                <p>
+                  <strong>Време:</strong> {route.time}
+                </p>
+
+                <p>
+                  <strong>Достъп:</strong> {route.carAccess}
+                </p>
+
+                <p>
+                  <strong>Интересно:</strong> {route.highlight}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="max-w-7xl mx-auto px-6 pb-20">
         <h2 className="text-4xl font-bold mb-10">
           Внимавай за
