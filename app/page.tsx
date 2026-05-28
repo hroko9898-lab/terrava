@@ -68,7 +68,42 @@ export default function Home() {
             </div>
           </div>
 
-<TerravaMap />
+<div className="bg-[#d8c5a8] rounded-[2.5rem] p-5 shadow-2xl border border-[#c8b28f]">
+  <div className="mb-5 flex flex-col gap-4">
+    <div>
+      <p className="uppercase tracking-[0.3em] text-xs mb-2 text-[#7a5a3a]">
+        Live map
+      </p>
+
+      <h3 className="text-3xl font-bold">
+        Интерактивна карта
+      </h3>
+    </div>
+
+    <div className="flex flex-wrap gap-2 text-sm font-semibold">
+      <span className="bg-[#f3eadb] px-4 py-2 rounded-full">
+        Нормална карта
+      </span>
+
+      <span className="bg-[#f3eadb] px-4 py-2 rounded-full">
+        Топографска
+      </span>
+
+      <span className="bg-[#f3eadb] px-4 py-2 rounded-full">
+        Пътеки
+      </span>
+    </div>
+  </div>
+
+  <TerravaMap />
+
+  <a
+    href="/map"
+    className="mt-5 block text-center bg-[#3b2416] text-[#f3eadb] px-6 py-4 rounded-full font-semibold"
+  >
+    Отвори голямата карта
+  </a>
+</div>
         </div>
       </section>
 <section className="px-6 py-20 max-w-7xl mx-auto">
