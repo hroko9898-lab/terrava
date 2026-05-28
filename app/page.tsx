@@ -150,38 +150,32 @@ export default function Home() {
       <section id="mountains" className="px-6 py-20 max-w-7xl mx-auto">
         <h2 className="text-4xl font-bold mb-10">Планини в България</h2>
 <div className="grid md:grid-cols-3 gap-6">
-  {[
-    {
-      name: "Рила",
-      image:
-        "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-    },
-    {
-      name: "Пирин",
-      image:
-        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
-    },
-    {
-      name: "Родопи",
-      image:
-        "https://images.unsplash.com/photo-1493246507139-91e8fad9978e",
-    },
-    {
-      name: "Стара планина",
-      image:
-        "https://images.unsplash.com/photo-1511497584788-876760111969",
-    },
-    {
-      name: "Витоша",
-      image:
-        "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
-    },
-    {
-      name: "Странджа",
-      image:
-        "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
-    },
-  ].map((mountain) => (
+{[
+  {
+    name: "Рила",
+    image: "/mountains/rila.jpg",
+  },
+  {
+    name: "Пирин",
+    image: "/mountains/pirin.jpg",
+  },
+  {
+    name: "Родопи",
+    image: "/mountains/rodopi.jpg",
+  },
+  {
+    name: "Стара планина",
+    image: "/mountains/stara-planina.jpg",
+  },
+  {
+    name: "Витоша",
+    image: "/mountains/vitosha.jpg",
+  },
+  {
+    name: "Странджа",
+    image: "/mountains/strandzha.jpg",
+  },
+].map((mountain) => (
     
      <a
  href={
