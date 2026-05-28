@@ -19,43 +19,51 @@ export default function MapPage() {
         Карта на България
       </h1>
 
-      <p className="text-xl max-w-3xl text-[#6b4b32] mb-12">
-        Тук ще добавим интерактивна карта с планини, пътеки,
-        хижи, върхове, GPS позиция и топографски слоеве.
-      </p>
+     <p className="text-xl max-w-3xl text-[#6b4b32] mb-12">
+  Използвай картата, за да разгледаш планините, пешеходните маршрути,
+  топографските слоеве и своето местоположение в България.
+</p>
 
      <div className="bg-[#d8c5a8] rounded-[2.5rem] p-6 shadow-xl mb-20">
   <TerravaMap />
 </div>
-<section className="mt-20 grid md:grid-cols-3 gap-8">
-  <div className="bg-[#eadcc7] rounded-3xl p-8 border border-[#d6c3aa]">
-    <h2 className="text-2xl font-bold mb-4">
-      Планини
-    </h2>
+<section className="mt-20">
+  <p className="uppercase tracking-[0.3em] text-sm mb-6 text-[#7a5a3a]">
+    Функции
+  </p>
 
-    <p className="text-[#6b4b32]">
-      Скоро тук ще има маркери за Рила, Пирин, Родопи, Стара планина, Витоша и Странджа.
-    </p>
-  </div>
+  <h2 className="text-4xl font-bold mb-10">
+    Какво можеш да правиш с картата
+  </h2>
 
-  <div className="bg-[#eadcc7] rounded-3xl p-8 border border-[#d6c3aa]">
-    <h2 className="text-2xl font-bold mb-4">
-      Топографски слоеве
-    </h2>
+  <div className="grid md:grid-cols-4 gap-6">
+    <div className="bg-[#eadcc7] rounded-3xl p-7 border border-[#d6c3aa]">
+      <h3 className="text-2xl font-bold mb-4">Планински маркери</h3>
+      <p className="text-[#6b4b32]">
+        Натисни маркер на картата, за да отвориш страницата на съответната планина.
+      </p>
+    </div>
 
-    <p className="text-[#6b4b32]">
-      Ще добавим релеф, пътеки, върхове, хижи и терен за по-добра ориентация.
-    </p>
-  </div>
+    <div className="bg-[#eadcc7] rounded-3xl p-7 border border-[#d6c3aa]">
+      <h3 className="text-2xl font-bold mb-4">Топографски слой</h3>
+      <p className="text-[#6b4b32]">
+        Превключи към топографска карта, за да видиш релефа и планинския терен.
+      </p>
+    </div>
 
-  <div className="bg-[#eadcc7] rounded-3xl p-8 border border-[#d6c3aa]">
-    <h2 className="text-2xl font-bold mb-4">
-      GPS позиция
-    </h2>
+    <div className="bg-[#eadcc7] rounded-3xl p-7 border border-[#d6c3aa]">
+      <h3 className="text-2xl font-bold mb-4">Пешеходни маршрути</h3>
+      <p className="text-[#6b4b32]">
+        Включи слоя с пътеки, за да видиш основните туристически маршрути.
+      </p>
+    </div>
 
-    <p className="text-[#6b4b32]">
-      В бъдеща версия ще има бутон “Покажи къде съм” за ориентиране на терен.
-    </p>
+    <div className="bg-[#eadcc7] rounded-3xl p-7 border border-[#d6c3aa]">
+      <h3 className="text-2xl font-bold mb-4">GPS позиция</h3>
+      <p className="text-[#6b4b32]">
+        Използвай бутона “Покажи къде съм”, за да видиш текущото си местоположение.
+      </p>
+    </div>
   </div>
 </section>
 <footer className="mt-40 pt-12 border-t border-[#d6c3aa]">
