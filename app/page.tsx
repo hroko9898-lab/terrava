@@ -267,20 +267,27 @@ className="group overflow-hidden rounded-[2rem] bg-[#eadcc7] border border-[#d6c
       </p>
     </div>
 
-    <div className="flex gap-6 text-sm font-medium">
-      <a href="#mountains" className="hover:text-[#7a5a3a] transition">
-  Планини
-</a>
-<a href="/map" className="hover:text-[#7a5a3a] transition">
-  Карта
-</a>
-<a href="/safety" className="hover:text-[#7a5a3a] transition">
-  Безопасност
-</a>
-<a href="/about" className="hover:text-[#7a5a3a] transition">
-  За нас
-</a>
-    </div>
+  <div className="flex flex-wrap gap-6 text-sm font-medium">
+  <a href="#mountains" className="hover:text-[#7a5a3a] transition">
+    Планини
+  </a>
+
+  <a href="/map" className="hover:text-[#7a5a3a] transition">
+    Карта
+  </a>
+
+  <a href="/routes" className="hover:text-[#7a5a3a] transition">
+    Маршрути
+  </a>
+
+  <a href="/safety" className="hover:text-[#7a5a3a] transition">
+    Безопасност
+  </a>
+
+  <a href="/about" className="hover:text-[#7a5a3a] transition">
+    За нас
+  </a>
+</div>
   </div>
 
   <p className="text-sm text-[#7a5a3a] mt-10">
