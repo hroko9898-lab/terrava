@@ -54,20 +54,27 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="#mountains"
-                className="bg-[#3b2416] text-[#f3eadb] px-7 py-4 rounded-full font-semibold text-center"
-              >
-                Разгледай планините
-              </a>
+  <a
+    href="#mountains"
+    className="bg-[#3b2416] text-[#f3eadb] px-7 py-4 rounded-full font-semibold text-center"
+  >
+    Разгледай планините
+  </a>
 
-              <a
-                href="/map"
-                className="border border-[#3b2416] px-7 py-4 rounded-full font-semibold text-center"
-              >
-                Виж картата
-              </a>
-            </div>
+  <a
+    href="/routes"
+    className="bg-[#7a5a3a] text-[#f3eadb] px-7 py-4 rounded-full font-semibold text-center"
+  >
+    Виж всички маршрути
+  </a>
+
+  <a
+    href="/map"
+    className="border border-[#3b2416] px-7 py-4 rounded-full font-semibold text-center"
+  >
+    Виж картата
+  </a>
+</div>
           </div>
 
 <div className="bg-[#d8c5a8] rounded-[2.5rem] p-5 shadow-2xl border border-[#c8b28f]">
