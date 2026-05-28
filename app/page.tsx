@@ -250,9 +250,12 @@ className="group overflow-hidden rounded-[2rem] bg-[#eadcc7] border border-[#d6c
             рискове при преход.
           </p>
 
-          <button className="bg-[#f3eadb] text-[#3b2416] px-7 py-4 rounded-full font-semibold">
-            Научи повече
-          </button>
+         <a
+  href="/safety"
+  className="inline-block bg-[#f3eadb] text-[#3b2416] px-7 py-4 rounded-full font-semibold"
+>
+  Научи повече
+</a>
         </div>
       </section>
       <footer className="px-6 py-12 max-w-7xl mx-auto border-t border-[#d6c3aa]">
