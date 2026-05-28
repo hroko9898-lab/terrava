@@ -1,3 +1,13 @@
+type Route = {
+  title: string;
+  time: string;
+  difficulty: string;
+  carAccess: string;
+  highlight: string;
+  description: string;
+  link?: string;
+};
+
 type MountainPageProps = {
   name: string;
   description: string;
@@ -7,14 +17,7 @@ type MountainPageProps = {
     text: string;
   }[];
   dangers: string[];
-  routes?: {
-    title: string;
-    time: string;
-    difficulty: string;
-    carAccess: string;
-    highlight: string;
-    description: string;
-  }[];
+  routes?: Route[];
 };
 
 export default function MountainPage({
@@ -25,7 +28,7 @@ export default function MountainPage({
   dangers,
   routes,
 }: MountainPageProps) {
-  const defaultRoutes = [
+  const defaultRoutes: Route[] = [
     {
       title: "Лесен маршрут",
       time: "2–3 часа",
@@ -55,7 +58,8 @@ export default function MountainPage({
     },
   ];
 
-  const visibleRoutes = routes && routes.length > 0 ? routes : defaultRoutes;
+  const visibleRoutes: Route[] =
+    routes && routes.length > 0 ? routes : defaultRoutes;
 
   return (
     <main className="min-h-screen bg-[#f3eadb] text-[#3b2416]">
@@ -144,6 +148,15 @@ export default function MountainPage({
                 <p>
                   <strong>Интересно:</strong> {route.highlight}
                 </p>
+
+                {route.link && (
+                  <a
+                    href={route.link}
+                    className="mt-5 inline-block bg-[#3b2416] text-[#f3eadb] px-5 py-3 rounded-full font-semibold"
+                  >
+                    Виж маршрута
+                  </a>
+                )}
               </div>
             </div>
           ))}

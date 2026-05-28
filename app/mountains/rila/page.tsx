@@ -1,9 +1,11 @@
 import MountainPage from "../../components/MountainPage";
+
 export const metadata = {
   title: "Рила | Маршрути, езера и безопасност | Terrava",
   description:
     "Разгледай маршрути в Рила като Седемте рилски езера, Мусала и Мальовица, с информация за трудност, време, достъп и безопасност.",
 };
+
 export default function RilaPage() {
   return (
     <MountainPage
@@ -33,6 +35,7 @@ export default function RilaPage() {
           highlight: "Езера, панорами и високопланински гледки",
           description:
             "Един от най-популярните маршрути в Рила. Подходящ е за хора с нормална физическа подготовка, но през силен сезон може да е много посещаван.",
+          link: "/mountains/rila/seven-rila-lakes",
         },
         {
           title: "Мусала",
@@ -42,6 +45,7 @@ export default function RilaPage() {
           highlight: "Най-високият връх в България и на Балканите",
           description:
             "Класически високопланински маршрут. Има красиви езера, открити била и сериозно натоварване. Не е подходящ при лошо време, мъгла или силен вятър.",
+          link: "/mountains/rila/musala",
         },
         {
           title: "Мальовица",
@@ -51,6 +55,7 @@ export default function RilaPage() {
           highlight: "Алпийска долина, хижа Мальовица и впечатляващи върхове",
           description:
             "Един от най-красивите райони в Рила. Подходящ е за по-подготвени туристи, защото маршрутът е по-сериозен и теренът може да бъде тежък.",
+          link: "/mountains/rila/malyovitsa",
         },
       ]}
       dangers={["Мечки", "Вълци", "Глигани", "Змии"]}
