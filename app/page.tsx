@@ -200,17 +200,17 @@ export default function Home() {
     : "#"
 }
   key={mountain.name}
-  className="overflow-hidden rounded-3xl bg-[#eadcc7] border border-[#d6c3aa] hover:scale-[1.02] transition block"
+className="group overflow-hidden rounded-[2rem] bg-[#eadcc7] border border-[#d6c3aa] shadow-lg hover:shadow-2xl transition duration-300"
 >
     
       <img
         src={mountain.image}
         alt={mountain.name}
-        className="h-64 w-full object-cover"
+       className="h-72 w-full object-cover group-hover:scale-105 transition duration-500"
       />
 
-      <div className="p-6">
-        <h3 className="text-2xl font-bold mb-3">
+     <div className="p-7">
+        <h3 className="text-3xl font-bold mb-3">
           {mountain.name}
         </h3>
 
