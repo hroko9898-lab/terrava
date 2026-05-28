@@ -1,9 +1,11 @@
 import MountainPage from "../../components/MountainPage";
+
 export const metadata = {
   title: "Пирин | Вихрен, Безбог и планински маршрути | Terrava",
   description:
     "Разгледай маршрути в Пирин като Вихрен, Безбог, Попово езеро и Кончето, с информация за трудност, време, достъп и безопасност.",
 };
+
 export default function PirinPage() {
   return (
     <MountainPage
@@ -33,6 +35,7 @@ export default function PirinPage() {
           highlight: "Мраморен връх, алпийски терен и силни панорами",
           description:
             "Един от най-емблематичните маршрути в Пирин. Подходящ е за хора с добра физическа подготовка. Не е добър избор при лошо време, мъгла или силен вятър.",
+          link: "/mountains/pirin/vihren",
         },
         {
           title: "Безбог и Попово езеро",
@@ -42,6 +45,7 @@ export default function PirinPage() {
           highlight: "Езера, открити гледки и високопланински пейзаж",
           description:
             "Красив маршрут, който е по-достъпен от тежките пирински върхове. Подходящ е за хора с нормална подготовка, но пак изисква внимание в планински условия.",
+          link: "/mountains/pirin/bezbog-popovo-ezero",
         },
         {
           title: "Кончето",
@@ -51,6 +55,7 @@ export default function PirinPage() {
           highlight: "Един от най-драматичните ръбове в Пирин",
           description:
             "Маршрут само за опитни туристи. Има открити участъци, сериозно натоварване и не е подходящ за хора със страх от височини или без планински опит.",
+          link: "/mountains/pirin/koncheto",
         },
       ]}
       dangers={["Мечки", "Вълци", "Глигани", "Змии"]}
