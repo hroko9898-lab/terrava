@@ -173,6 +173,15 @@ export default function RoutesPage() {
         </p>
       </section>
 
+     <div className="bg-[#eadcc7] border border-[#d6c3aa] rounded-3xl p-6 mb-10">
+  <p className="text-2xl font-bold mb-2">
+    18 маршрута в 6 планини.
+  </p>
+
+  <p className="text-[#6b4b32]">
+    Избери трудност според подготовката си и намери подходящ маршрут за следващия си преход.
+  </p>
+</div>
      <RoutesFilter />
 
       <footer className="mt-40 pt-12 border-t border-[#d6c3aa]">
