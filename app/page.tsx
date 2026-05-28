@@ -210,10 +210,27 @@ className="group overflow-hidden rounded-[2rem] bg-[#eadcc7] border border-[#d6c
       />
 
      <div className="p-7">
-        <h3 className="text-3xl font-bold mb-3">
-          {mountain.name}
-        </h3>
+       <div className="mb-4">
+  <span className="inline-block bg-[#3b2416] text-[#f3eadb] px-4 py-2 rounded-full text-sm font-semibold mb-4">
+    {mountain.name === "Рила"
+      ? "Висока планина"
+      : mountain.name === "Пирин"
+      ? "Алпийски върхове"
+      : mountain.name === "Родопи"
+      ? "Пещери и легенди"
+      : mountain.name === "Стара планина"
+      ? "Дълги маршрути"
+      : mountain.name === "Витоша"
+      ? "Близо до София"
+      : mountain.name === "Странджа"
+      ? "Диви гори"
+      : "Планина"}
+  </span>
 
+  <h3 className="text-3xl font-bold">
+    {mountain.name}
+  </h3>
+</div>
         <p className="text-[#6b4b32]">
           Маршрути, върхове, хижи и диви места.
         </p>
