@@ -4,6 +4,46 @@ import { useEffect, useRef } from "react";
 
 export default function TerravaMap() {
   const mapRef = useRef<HTMLDivElement | null>(null);
+  const mapInstanceRef = useRef<any>(null);
+  const userMarkerRef = useRef<any>(null);
+
+  function showMyLocation() {
+    if (!navigator.geolocation) {
+      alert("GPS не се поддържа от този браузър.");
+      return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+      async (position) => {
+        const L = await import("leaflet");
+
+        const lat = position.coords.latitude;
+        const lng = position.coords.longitude;
+
+        if (!mapInstanceRef.current) return;
+
+        if (userMarkerRef.current) {
+          userMarkerRef.current.remove();
+        }
+
+        userMarkerRef.current = L.circleMarker([lat, lng], {
+          radius: 10,
+          color: "#ffffff",
+          weight: 3,
+          fillColor: "#2563eb",
+          fillOpacity: 1,
+        })
+          .addTo(mapInstanceRef.current)
+          .bindPopup("Ти си тук")
+          .openPopup();
+
+        mapInstanceRef.current.setView([lat, lng], 13);
+      },
+      () => {
+        alert("Не успях да взема местоположението. Провери дали си разрешил GPS достъп.");
+      }
+    );
+  }
 
   useEffect(() => {
     if (!mapRef.current) return;
@@ -18,6 +58,7 @@ export default function TerravaMap() {
       mapRef.current.dataset.loaded = "true";
 
       map = L.map(mapRef.current).setView([42.7339, 25.4858], 7);
+      mapInstanceRef.current = map;
 
       const normalMap = L.tileLayer(
         "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -121,9 +162,18 @@ export default function TerravaMap() {
   }, []);
 
   return (
-    <div
-      ref={mapRef}
-      className="relative z-0 h-[520px] w-full overflow-hidden rounded-[2rem]"
-    />
+    <div className="relative">
+      <button
+        onClick={showMyLocation}
+        className="mb-4 bg-[#3b2416] text-[#f3eadb] px-6 py-3 rounded-full font-semibold shadow-lg"
+      >
+        Покажи къде съм
+      </button>
+
+      <div
+        ref={mapRef}
+        className="relative z-0 h-[520px] w-full overflow-hidden rounded-[2rem]"
+      />
+    </div>
   );
 }
