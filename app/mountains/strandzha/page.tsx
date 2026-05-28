@@ -1,9 +1,11 @@
 import MountainPage from "../../components/MountainPage";
+
 export const metadata = {
   title: "Странджа | Гори, светилища и маршрути | Terrava",
   description:
     "Разгледай маршрути и места в Странджа като Мишкова нива, Голямо Градище, Бръшлян и Индипасха, с информация за трудност и достъп.",
 };
+
 export default function StrandzhaPage() {
   return (
     <MountainPage
@@ -33,6 +35,7 @@ export default function StrandzhaPage() {
           highlight: "Тракийско светилище, горски пътеки и гледки към Странджа",
           description:
             "Подходящ маршрут за хора, които искат история, природа и по-спокойно ходене. Теренът не е високопланински, но районът е див и е добре да се върви подготвен.",
+          link: "/mountains/strandzha/mishkova-niva-golyamo-gradishte",
         },
         {
           title: "Бръшлян и странджанските села",
@@ -42,6 +45,7 @@ export default function StrandzhaPage() {
           highlight: "Стари къщи, параклиси, гори и странджанска атмосфера",
           description:
             "Лесно достъпна идея за разходка, подходяща и за хора без сериозна подготовка. Добър избор за снимки, спокойствие и опознаване на местната архитектура.",
+          link: "/mountains/strandzha/brashlyan",
         },
         {
           title: "Индипасха",
@@ -51,6 +55,7 @@ export default function StrandzhaPage() {
           highlight: "Свещено място, горски маршрут и мистична атмосфера",
           description:
             "Едно от най-интересните места в Странджа. Преходът не е алпийски, но е добре да се тръгне с удобни обувки, вода и предварителна ориентация.",
+          link: "/mountains/strandzha/indipasha",
         },
       ]}
       dangers={["Глигани", "Змии", "Кърлежи", "Чакали"]}
