@@ -1,6 +1,12 @@
+import SiteFooter from "../components/SiteFooter";
+import SiteNav from "../components/SiteNav";
+
 export default function SafetyPage() {
   return (
-    <main className="min-h-screen bg-[#f3eadb] text-[#3b2416] px-6 py-12 md:px-20 md:py-20">
+    <main className="min-h-screen bg-[#f3eadb] text-[#3b2416] overflow-x-hidden">
+      <section className="px-6 py-8 max-w-7xl mx-auto md:px-20 md:py-12">
+        <SiteNav />
+
       <div className="mb-10">
         <a
           href="/"
@@ -199,31 +205,9 @@ export default function SafetyPage() {
           </div>
         </div>
       </section>
+      </section>
 
-      <footer className="mt-40 pt-12 border-t border-[#d6c3aa]">
-        <div className="flex flex-col md:flex-row justify-between gap-6">
-          <div>
-           <img
-  src="/terrava-logo.png"
-  alt="Terrava"
-  className="h-10 w-auto mb-3"
-/>
-            <p className="text-[#6b4b32] max-w-md">
-              Съвети за безопасност, диви животни, време и подготовка преди преход.
-            </p>
-          </div>
-
-          <div className="flex gap-6 text-sm font-medium">
-            <a href="/">Начало</a>
-            <a href="/map">Карта</a>
-            <a href="/about">За нас</a>
-          </div>
-        </div>
-
-        <p className="text-sm text-[#7a5a3a] mt-10">
-          © 2026 Terrava. Всички права запазени.
-        </p>
-      </footer>
+      <SiteFooter description="Съвети за безопасност, диви животни, време и подготовка преди преход." />
     </main>
   );
 }

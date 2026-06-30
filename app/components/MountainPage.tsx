@@ -1,3 +1,6 @@
+import SiteFooter from "./SiteFooter";
+import SiteNav from "./SiteNav";
+
 type Route = {
   title: string;
   time: string;
@@ -62,7 +65,11 @@ export default function MountainPage({
     routes && routes.length > 0 ? routes : defaultRoutes;
 
   return (
-    <main className="min-h-screen bg-[#f3eadb] text-[#3b2416]">
+    <main className="min-h-screen bg-[#f3eadb] text-[#3b2416] overflow-x-hidden">
+      <section className="px-6 py-8 max-w-7xl mx-auto">
+        <SiteNav />
+      </section>
+
       <section className={`h-[70vh] ${color} flex items-end`}>
         <div className="p-10 md:p-20">
           <div className="mb-10">
@@ -185,6 +192,8 @@ export default function MountainPage({
           ))}
         </div>
       </section>
+
+      <SiteFooter />
     </main>
   );
 }
