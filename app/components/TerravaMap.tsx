@@ -2,6 +2,11 @@
 
 import { useEffect, useRef } from "react";
 
+type TrailLayerConfig = {
+  label: string;
+  files: string[];
+};
+
 export default function TerravaMap() {
   const mapRef = useRef<HTMLDivElement | null>(null);
   const mapInstanceRef = useRef<any>(null);
@@ -40,7 +45,9 @@ export default function TerravaMap() {
         mapInstanceRef.current.setView([lat, lng], 13);
       },
       () => {
-        alert("Не успях да взема местоположението. Провери дали си разрешил GPS достъп.");
+        alert(
+          "Не успях да взема местоположението. Провери дали си разрешил GPS достъп."
+        );
       }
     );
   }
@@ -84,29 +91,11 @@ export default function TerravaMap() {
       normalMap.addTo(map);
       hikingRoutes.addTo(map);
 
-      L.control
-        .layers(
-          {
-            "Нормална карта": normalMap,
-            "Топографска карта": topoMap,
-          },
-          {
-            "Пешеходни маршрути": hikingRoutes,
-          }
-        )
-        .addTo(map);
+      const mountainMarkers = L.layerGroup();
 
       const mountains = [
-        {
-          name: "Рила",
-          position: [42.17, 23.58],
-          link: "/mountains/rila",
-        },
-        {
-          name: "Пирин",
-          position: [41.76, 23.42],
-          link: "/mountains/pirin",
-        },
+        { name: "Рила", position: [42.17, 23.58], link: "/mountains/rila" },
+        { name: "Пирин", position: [41.76, 23.42], link: "/mountains/pirin" },
         {
           name: "Родопи",
           position: [41.72, 24.75],
@@ -137,18 +126,168 @@ export default function TerravaMap() {
           fillColor: "#f3eadb",
           fillOpacity: 1,
         })
-          .addTo(map)
-          .bindPopup(
-            `
-              <div style="font-family: sans-serif; min-width: 140px;">
-                <strong style="font-size: 16px;">${mountain.name}</strong>
-                <br />
-                <a href="${mountain.link}" style="color: #3b2416; font-weight: 700;">
-                  Отвори страницата
-                </a>
-              </div>
-            `
+          .bindPopup(`
+            <div style="font-family: sans-serif; min-width: 140px;">
+              <strong style="font-size: 16px;">${mountain.name}</strong>
+              <br />
+              <a href="${mountain.link}" style="color: #3b2416; font-weight: 700;">
+                Отвори страницата
+              </a>
+            </div>
+          `)
+          .addTo(mountainMarkers);
+      });
+
+      mountainMarkers.addTo(map);
+
+      const layersControl = L.control
+        .layers(
+          {
+            "Стандартна карта": normalMap,
+            "Топографска карта": topoMap,
+          },
+          {
+            "Маркирани туристически маршрути": hikingRoutes,
+            "Планински маркери": mountainMarkers,
+          },
+          {
+            collapsed: false,
+          }
+        )
+        .addTo(map);
+
+      const trailConfigs: TrailLayerConfig[] = [
+        {
+          label: "Горски пътища и пътеки — Рила",
+          files: ["/map-data/osm/rila-trails.geojson"],
+        },
+        {
+          label: "Горски пътища и пътеки — Пирин",
+          files: ["/map-data/osm/pirin-trails.geojson"],
+        },
+        {
+          label: "Горски пътища и пътеки — Витоша",
+          files: ["/map-data/osm/vitosha-trails.geojson"],
+        },
+        {
+          label: "Горски пътища и пътеки — Родопи",
+          files: [
+            "/map-data/osm/rodopi-west-trails.geojson",
+            "/map-data/osm/rodopi-central-trails.geojson",
+            "/map-data/osm/rodopi-east-north-trails.geojson",
+            "/map-data/osm/rodopi-east-south-trails.geojson",
+          ],
+        },
+        {
+          label: "Горски пътища и пътеки — Стара планина",
+          files: [
+            "/map-data/osm/stara-planina-west-trails.geojson",
+            "/map-data/osm/stara-planina-central-trails.geojson",
+            "/map-data/osm/stara-planina-east-west-trails.geojson",
+            "/map-data/osm/stara-planina-east-east-trails.geojson",
+          ],
+        },
+        {
+          label: "Горски пътища и пътеки — Странджа",
+          files: [
+            "/map-data/osm/strandzha-west-trails.geojson",
+            "/map-data/osm/strandzha-east-trails.geojson",
+          ],
+        },
+      ];
+
+      const trailLayers = trailConfigs.map((config) => ({
+        ...config,
+        group: L.layerGroup(),
+        loaded: false,
+        loading: false,
+      }));
+
+      function getTrailStyle(feature: any) {
+        const tags = feature?.properties?.tags ?? feature?.properties ?? {};
+        const roadType = tags.highway;
+
+        if (roadType === "track") {
+          return {
+            color: "#9a6a35",
+            weight: 3,
+            opacity: 0.9,
+            dashArray: "7 6",
+          };
+        }
+
+        return {
+          color: "#2f6b4f",
+          weight: 3,
+          opacity: 0.95,
+        };
+      }
+
+      function addPopup(feature: any, layer: any) {
+        const tags = feature?.properties?.tags ?? feature?.properties ?? {};
+
+        const type =
+          tags.highway === "track" ? "Горски път" : "Планинска пътека";
+
+        const name = tags.name ?? "Маршрут без име";
+
+        layer.bindPopup(`
+          <div style="font-family: sans-serif; min-width: 170px;">
+            <strong style="font-size: 15px;">${name}</strong>
+            <br />
+            <span>${type}</span>
+            <br />
+            <small>Данни: OpenStreetMap</small>
+          </div>
+        `);
+      }
+
+      async function loadTrailLayer(trailLayer: any) {
+        if (trailLayer.loaded || trailLayer.loading) return;
+
+        trailLayer.loading = true;
+
+        try {
+          await Promise.all(
+            trailLayer.files.map(async (filePath: string) => {
+              const response = await fetch(filePath);
+
+              if (!response.ok) {
+                throw new Error(`Не е намерен файл: ${filePath}`);
+              }
+
+              const geoJsonData = await response.json();
+
+              L.geoJSON(geoJsonData, {
+                style: getTrailStyle,
+                onEachFeature: addPopup,
+              }).addTo(trailLayer.group);
+            })
           );
+
+          trailLayer.loaded = true;
+        } catch (error) {
+          console.error("Проблем при зареждане на слой:", error);
+          alert(
+            "Един от файловете с пътеки не можа да се зареди. Провери имената на GeoJSON файловете."
+          );
+        } finally {
+          trailLayer.loading = false;
+        }
+      }
+
+      trailLayers.forEach((trailLayer) => {
+        layersControl.addOverlay(trailLayer.group, trailLayer.label);
+      });
+
+      map.on("overlayadd", (event: any) => {
+        const selectedLayer = trailLayers.find(
+          (trailLayer) => trailLayer.group === event.layer
+        );
+
+        if (selectedLayer) {
+          loadTrailLayer(selectedLayer);
+        }
       });
     }
 
@@ -158,6 +297,10 @@ export default function TerravaMap() {
       if (map) {
         map.remove();
       }
+
+      if (mapRef.current) {
+        delete mapRef.current.dataset.loaded;
+      }
     };
   }, []);
 
@@ -165,7 +308,7 @@ export default function TerravaMap() {
     <div className="relative">
       <button
         onClick={showMyLocation}
-        className="mb-4 bg-[#3b2416] text-[#f3eadb] px-6 py-3 rounded-full font-semibold shadow-lg"
+        className="mb-4 rounded-full bg-[#3b2416] px-6 py-3 font-semibold text-[#f3eadb] shadow-lg"
       >
         Покажи къде съм
       </button>
