@@ -5,7 +5,7 @@ type SiteNavProps = {
 const linkClass =
   "bg-[#f3eadb] rounded-2xl px-6 py-4 font-semibold hover:bg-[#3b2416] hover:text-[#f3eadb] transition";
 
-export default function SiteNav({ mountainsHref = "/#mountains" }: SiteNavProps) {
+export default function SiteNav({ mountainsHref = "/mountains" }: SiteNavProps) {
   return (
     <nav className="flex items-center justify-between mb-20 relative z-[9999]">
       <a

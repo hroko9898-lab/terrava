@@ -48,7 +48,7 @@ export default function Home() {
       <HomeLeafDecor />
       <div className="relative z-[1]">
       <section className="px-6 py-8 max-w-7xl mx-auto">
-        <SiteNav mountainsHref="#mountains" />
+        <SiteNav />
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
